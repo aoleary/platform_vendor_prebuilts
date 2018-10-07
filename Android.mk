@@ -26,3 +26,14 @@ LOCAL_PATH := $(call my-dir)
 # their rules should be written here.
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := Lawnchair
+LOCAL_CERTIFICATE := PRESIGNED
+LOCAL_DEX_PREOPT := false
+LOCAL_MODULE_CLASS := APPS
+LOCAL_OVERRIDES_PACKAGES := Home Launcher2 Launcher3 Launcher3QuickStep
+LOCAL_PRIVILEGED_MODULE := true
+LOCAL_SRC_FILES := app/Lawnchair/Lawnchair.apk
+LOCAL_REPLACE_PREBUILT_APK_INSTALLED := $(LOCAL_PATH)/$(LOCAL_SRC_FILES)
+include $(BUILD_PREBUILT)
