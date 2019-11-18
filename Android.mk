@@ -36,6 +36,18 @@ LOCAL_OVERRIDES_PACKAGES := Home Launcher2 Launcher3 Launcher3QuickStep
 LOCAL_PRIVILEGED_MODULE := true
 LOCAL_SRC_FILES := app/Lawnchair/Lawnchair.apk
 LOCAL_REPLACE_PREBUILT_APK_INSTALLED := $(LOCAL_PATH)/$(LOCAL_SRC_FILES)
+
+LOCAL_PREBUILT_JNI_LIBS_arm := \
+    app/Lawnchair/lib/armeabi-v7a/libhoko_blur.so
+
+LOCAL_PREBUILT_JNI_LIBS_arm64 := \
+    app/Lawnchair/lib/arm64-v8a/libhoko_blur.so
+
+LOCAL_PREBUILT_JNI_LIBS_x86 := \
+    app/Lawnchair/lib/x86/libhoko_blur.so
+
+LOCAL_PREBUILT_JNI_LIBS_x86_64 := \
+    app/Lawnchair/lib/x86_64/libhoko_blur.so
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
